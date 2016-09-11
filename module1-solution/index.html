@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+      .success-font {
+        color: green;
+      }
+      .fail-font {
+        color:red;
+      }
+      .success-input {
+        border-color: green;
+      }
+      .fail-input {
+        border-color: red;
+      }
+    </style>
+  </head>
+<body ng-app="myApp">
+   <div class="container" ng-controller="LunchCheckController">
+     <h1>Lunch Checker</h1>
+
+         <div class="form-group">
+             <input id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control {{status}}-input"
+             ng-model="name">
+             <span>IMPORTANT: Empty itmes will be ignored. E.g. "item 1, item2,,item3" will be counted as 3 items.</span>
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default" ng-click="count();">Check If Too Much</button>
+         </div>
+         <div class="form-group message">
+           <!-- Your message can go here. -->
+           <span class="{{status}}-font">{{message}}</span>
+         </div>
+   </div>
+   <script src="angular.js" charset="utf-8"></script>
+   <script src="app.js" charset="utf-8"></script>
+</body>
+</html>
