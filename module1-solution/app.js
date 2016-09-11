@@ -5,7 +5,6 @@
 
 
   function LunchCheckController ($scope) {
-    $scope.name = "item 1, item2,,,,i,item3";
     $scope.message = "";
     $scope.count = function () {
       var s = $scope.name.trim();
